@@ -5,6 +5,19 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#4099cf"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "202a5037-fecb-4326-86ab-1af894053ff2"
+      }
+    },
+    "android": {
+      "package": "com.mustak10.SpiNavApp"
+    }
   }
 }
