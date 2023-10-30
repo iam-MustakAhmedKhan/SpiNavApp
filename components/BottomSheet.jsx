@@ -9,7 +9,7 @@ import { getFocus, getIndex, getSearchValue } from '../redux/actionSlice';
 import SearchContent from './SearchContent';
 
 
-const BottomSheets = ({ navigation }) => {
+const BottomSheets = () => {
 
     const intRef = useRef(null);
     const sheetRef = useRef(null);
@@ -66,7 +66,7 @@ const BottomSheets = ({ navigation }) => {
                     <View style={{ paddingHorizontal: 20 }}>
                         <SearchInput ref={intRef} inedex={inde} />
                         {/* {isfocued ? <SearchContent /> : } */}
-                        {searchValue === '' ? <NavigationBox navigation={navigation} /> : <SearchContent />}
+                        {searchValue === '' ? <NavigationBox /> : <SearchContent />}
 
 
                     </View>

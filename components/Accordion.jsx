@@ -6,13 +6,24 @@ import { Collapse, CollapseHeader, CollapseBody } from 'accordion-collapse-react
 import { ScrollView } from 'react-native';
 import { boxIcon } from '../utils/images';
 import { useNavigation } from '@react-navigation/native';
+import { useDispatch, useSelector } from 'react-redux';
+import { getSearchValue } from '../redux/actionSlice';
 
 
 
 const Accordion = ({ data }) => {
 
     const navigation = useNavigation();
+    const dispatch = useDispatch();
 
+    const handleNavigate = (room) => {
+        dispatch(getSearchValue(''));
+        return navigation.navigate('Map', {
+            mapName: room.roomname,
+            floor: room.floor,
+            building: room.building
+        });
+    };
 
 
     return (
@@ -32,11 +43,7 @@ const Accordion = ({ data }) => {
                                         <View >
                                             <Entypo name="chevron-small-down" size={24} color="black" />
                                         </View>
-                                    </View> : <Pressable onPress={() => navigation.navigate('Map', {
-                                        mapName: room.roomname,
-                                        floor: room.floor,
-                                        building: room.building
-                                    })} key={room.id} className="flex-row justify-start rounded-[12px] bg-[#e6eff6] py-2  px-2 items-center " style={{ ro: 20 }}>
+                                    </View> : <Pressable onPress={() => handleNavigate(room)} key={room.id} className="flex-row justify-start rounded-[12px] bg-[#e6eff6] py-2  px-2 items-center " style={{ ro: 20 }}>
                                         <View className="w-[60px] h-[60px] rounded-full  bg-[#edf6fd] p-3 mr-3 object-cover">
                                             <Image source={boxIcon[data.title]} className="w-full h-full" />
                                         </View>
@@ -48,11 +55,7 @@ const Accordion = ({ data }) => {
                                     {
                                         room.roomNo?.map(rm => (
                                             <View key={rm.id} className="py-1 bg-[#edf6fd]" style={styles.contentContainer}>
-                                                <Pressable onPress={() => navigation.navigate('Map', {
-                                                    mapName: rm.roomname,
-                                                    floor: rm.floor,
-                                                    building: rm.building
-                                                })} className="flex-row items-center bg-[#edf6fd] p-2 rounded-[12px]">
+                                                <Pressable onPress={() => handleNavigate(rm)} className="flex-row items-center bg-[#edf6fd] p-2 rounded-[12px]">
                                                     <View className="w-[60px] h-[60px] rounded-full  bg-[#e6eff6] p-3 mr-3 object-cover">
                                                         <Image source={boxIcon[data.title]} className="w-full h-full" />
                                                     </View>

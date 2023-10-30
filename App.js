@@ -43,6 +43,7 @@ export default function App() {
   }
 
 
+
   return (
     <NavigationContainer>
       <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutRootView}>

@@ -7,13 +7,13 @@ import datas from '../data/data.json';
 import SearchContent from '../components/SearchContent';
 import { useSelector } from 'react-redux';
 
-const DataScreen = ({ navigation }) => {
+const DataScreen = () => {
     const route = useRoute();
     const { scData } = route.params;
     const searchValue = useSelector(state => state.action.searchValue);
     return (
         <View className="bg-[#edf6fd] h-screen py-5" style={{ paddingHorizontal: 20 }} >
-            <SearchInput navigation={navigation} inedex={1} />
+            <SearchInput inedex={1} />
 
             {
 
