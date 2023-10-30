@@ -7,7 +7,7 @@
       "**/*"
     ],
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./asset/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#4099cf"
     },

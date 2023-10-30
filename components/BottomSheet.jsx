@@ -5,9 +5,8 @@ import NavigationBox from './NavigationBox';
 import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getFocus, getIndex } from '../redux/actionSlice';
+import { getFocus, getIndex, getSearchValue } from '../redux/actionSlice';
 import SearchContent from './SearchContent';
-import Search from './Search';
 
 
 const BottomSheets = ({ navigation }) => {
@@ -16,12 +15,16 @@ const BottomSheets = ({ navigation }) => {
     const sheetRef = useRef(null);
     const inde = useSelector(state => state.action.sheetIndex);
     const isfocued = useSelector(state => state.action.isfocued);
+    const searchValue = useSelector(state => state.action.searchValue);
     // variables
     const snapPoints = useMemo(() => ["50%", "100%"], []);
     const dispatch = useDispatch();
 
     const handleSheetChange = useCallback((index) => {
         dispatch(getIndex(index));
+        if (index == 0) {
+            dispatch(getSearchValue(''));
+        }
 
     }, []);
     const handleSnapPress = useCallback((index) => {
@@ -62,7 +65,10 @@ const BottomSheets = ({ navigation }) => {
 
                     <View style={{ paddingHorizontal: 20 }}>
                         <SearchInput ref={intRef} inedex={inde} />
-                        {isfocued ? <SearchContent /> : <NavigationBox navigation={navigation} />}
+                        {/* {isfocued ? <SearchContent /> : } */}
+                        {searchValue === '' ? <NavigationBox navigation={navigation} /> : <SearchContent />}
+
+
                     </View>
 
 

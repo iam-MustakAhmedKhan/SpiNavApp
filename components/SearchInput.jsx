@@ -37,7 +37,7 @@ const SearchInput = ({ inedex }, ref) => {
                 <Feather name="arrow-left" size={24} color="#9ca3af" />
             </Pressable> : ''}
 
-            <TextInput defaultValue={scValue} onChangeText={(n) => settt(n)} ref={ref} onFocus={handleFocus} onBlur={handleBlur} placeholder='Ex: 1008,1006 Computer Lab' placeholderTextColor={'gray'} className={`flex-1 font-bold ${inedex ? '' : 'pl-2'}`} />
+            <TextInput defaultValue={scValue} onChangeText={(n) => settt(n)} ref={ref} onFocus={handleFocus} placeholder='Ex: 1008,1006 Computer Lab' placeholderTextColor={'gray'} className={`flex-1 font-bold ${inedex ? '' : 'pl-2'}`} />
 
             <View className="pr-2">
                 <AntDesign name="search1" size={24} color="#9ca3af" />
