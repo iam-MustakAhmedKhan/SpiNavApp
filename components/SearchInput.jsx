@@ -1,15 +1,35 @@
-import { View, TextInput, ScrollView } from 'react-native';
-import React from 'react';
+import { View, TextInput, ScrollView, Keyboard, Pressable } from 'react-native';
+import React, { forwardRef, useEffect, useState } from 'react';
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
-import { Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { getFocus, getIndex, getSearchValue } from '../redux/actionSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 
-const SearchInput = ({ inedex }) => {
+
+const SearchInput = ({ inedex }, ref) => {
 
     const navigation = useNavigation();
+    const dispatch = useDispatch();
+    const scValue = useSelector(state => state.action.searchValue);
+
+    const [tt, settt] = useState('');
+
+    const handleFocus = () => {
+        dispatch(getIndex(1));
+        dispatch(getFocus(true));
+    };
+    const handleBlur = () => {
+        dispatch(getIndex(0));
+    };
+
+    useEffect(() => {
+        dispatch(getSearchValue(tt));
+    }, [tt]);
+
+
 
     return (
         <View className="bg-[#e6eff6] flex-row rounded-full py-[10px] items-center px-2" >
@@ -17,7 +37,7 @@ const SearchInput = ({ inedex }) => {
                 <Feather name="arrow-left" size={24} color="#9ca3af" />
             </Pressable> : ''}
 
-            <TextInput placeholder='Ex: 1008,1006 Computer Lab' placeholderTextColor={'gray'} className={`flex-1 font-bold ${inedex ? '' : 'pl-2'}`} />
+            <TextInput defaultValue={scValue} onChangeText={(n) => settt(n)} ref={ref} onFocus={handleFocus} onBlur={handleBlur} placeholder='Ex: 1008,1006 Computer Lab' placeholderTextColor={'gray'} className={`flex-1 font-bold ${inedex ? '' : 'pl-2'}`} />
 
             <View className="pr-2">
                 <AntDesign name="search1" size={24} color="#9ca3af" />
@@ -26,4 +46,4 @@ const SearchInput = ({ inedex }) => {
     );
 };
 
-export default SearchInput;
+export default forwardRef(SearchInput);

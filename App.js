@@ -1,7 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { StyleSheet } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
-// import GlobalStyles from './components/GlobalStyles';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import * as SplashScreen from 'expo-splash-screen';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -9,6 +7,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import DataScreen from './screens/DataScreen';
 import MapScreen from './screens/MapScreen';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 
 const Stack = createStackNavigator();
@@ -46,22 +46,20 @@ export default function App() {
   return (
     <NavigationContainer>
       <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutRootView}>
+        <Provider store={store}>
 
-        <SafeAreaView style={{ flex: 1 }}>
-          <Stack.Navigator >
-            <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-            <Stack.Screen name="Data" component={DataScreen} options={{ headerShown: false }} />
-            <Stack.Screen name="Map" component={MapScreen} options={{ headerShown: false }} />
-          </Stack.Navigator>
+          <SafeAreaView style={{ flex: 1 }}>
+            <Stack.Navigator >
+              <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+              <Stack.Screen name="Data" component={DataScreen} options={{ headerShown: false }} />
+              <Stack.Screen name="Map" component={MapScreen} options={{ headerShown: false }} />
+            </Stack.Navigator>
 
 
-        </SafeAreaView>
+          </SafeAreaView>
+        </Provider>
 
       </GestureHandlerRootView>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-
-});

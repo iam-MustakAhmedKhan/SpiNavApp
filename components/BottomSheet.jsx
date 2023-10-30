@@ -1,47 +1,75 @@
-import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Keyboard, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import SearchInput from './SearchInput';
 import NavigationBox from './NavigationBox';
 import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getFocus, getIndex } from '../redux/actionSlice';
+import SearchContent from './SearchContent';
+import Search from './Search';
 
 
 const BottomSheets = ({ navigation }) => {
-    const [ind, setIndex] = useState(0);
 
+    const intRef = useRef(null);
     const sheetRef = useRef(null);
-
+    const inde = useSelector(state => state.action.sheetIndex);
+    const isfocued = useSelector(state => state.action.isfocued);
     // variables
     const snapPoints = useMemo(() => ["50%", "100%"], []);
+    const dispatch = useDispatch();
 
     const handleSheetChange = useCallback((index) => {
-        setIndex(index);
+        dispatch(getIndex(index));
+
     }, []);
+    const handleSnapPress = useCallback((index) => {
+        sheetRef.current?.snapToIndex(index);
+    }, []);
+
+    useEffect(() => {
+        handleSnapPress(inde);
+
+        if (inde !== 1) {
+            Keyboard.dismiss();
+        }
+    });
+
+    useEffect(() => {
+        if (intRef.current) {
+            const isFocused = intRef.current.isFocused();
+            dispatch(getFocus(isFocused));
+        }
+    });
+
 
     return (
 
 
-        <View style={styles.bottomSheetWrap}>
-            <BottomSheet ref={sheetRef}
-                snapPoints={snapPoints}
-                backgroundStyle={{
-                    backgroundColor: '#edf6fd',
-                    // borderTopEndRadius: ind == 1 ? 0 : 20,
-                    // borderTopStartRadius: ind == 1 ? 0 : 20,
-
-                }}
-                handleIndicatorStyle={{ backgroundColor: '#bfcad2', width: 50, height: 5 }}
-                onChange={handleSheetChange}
-            >
-
-                <View style={{ paddingHorizontal: 20 }}>
-                    <SearchInput inedex={ind} />
-                    <NavigationBox navigation={navigation} />
-                </View>
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+            <View style={styles.bottomSheetWrap}>
+                <BottomSheet ref={sheetRef}
+                    snapPoints={snapPoints}
+                    backgroundStyle={{
+                        backgroundColor: '#edf6fd',
 
 
+                    }}
+                    handleIndicatorStyle={{ backgroundColor: '#bfcad2', width: 50, height: 5 }}
+                    onChange={handleSheetChange}
+                >
 
-            </BottomSheet>
-        </View >
+                    <View style={{ paddingHorizontal: 20 }}>
+                        <SearchInput ref={intRef} inedex={inde} />
+                        {isfocued ? <SearchContent /> : <NavigationBox navigation={navigation} />}
+                    </View>
+
+
+
+                </BottomSheet>
+            </View >
+        </TouchableWithoutFeedback>
     );
 };
 
