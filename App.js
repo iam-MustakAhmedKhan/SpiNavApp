@@ -1,32 +1,29 @@
 import { useCallback, useEffect, useState } from 'react';
-import HomeScreen from './screens/HomeScreen';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import * as SplashScreen from 'expo-splash-screen';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-import DataScreen from './screens/DataScreen';
-import MapScreen from './screens/MapScreen';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import Dev from './screens/Dev';
+import Stacknav from './screens/Stacknav';
+import Sidebar from './components/Sidebar';
+
+const Drawer = createDrawerNavigator();
 
 
-const Stack = createStackNavigator();
+
+
 
 export default function App() {
+
 
   const [appIsReady, setAppIsReady] = useState(false);
 
   useEffect(() => {
     async function prepare() {
-      try {
-
-
-      } catch (e) {
-        console.warn(e);
-      } finally {
-        setAppIsReady(true);
-      }
+      setAppIsReady(true);
     }
 
     prepare();
@@ -43,24 +40,34 @@ export default function App() {
   }
 
 
-
   return (
-    <NavigationContainer>
+    <>
       <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutRootView}>
         <Provider store={store}>
 
           <SafeAreaView style={{ flex: 1 }}>
-            <Stack.Navigator >
-              <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-              <Stack.Screen name="Data" component={DataScreen} options={{ headerShown: false }} />
-              <Stack.Screen name="Map" component={MapScreen} options={{ headerShown: false }} />
-            </Stack.Navigator>
+            <NavigationContainer>
+
+              <Drawer.Navigator
+
+                screenOptions={{
+                  drawerStyle: { width: '100%' },
+                  drawerPosition: 'right'
+                }}
+                drawerContent={(props) => <Sidebar data={props} />}
+              >
+                <Drawer.Screen name='Main' component={Stacknav} options={{ headerShown: false }} />
+                <Drawer.Screen name='Developers' component={Dev} />
+              </Drawer.Navigator>
+
+
+            </NavigationContainer>
 
 
           </SafeAreaView>
         </Provider>
 
       </GestureHandlerRootView>
-    </NavigationContainer>
+    </>
   );
 }

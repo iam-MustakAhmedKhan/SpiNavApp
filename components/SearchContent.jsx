@@ -33,7 +33,7 @@ const SearchContent = ({ data }) => {
     return (
 
         <View className="mt-3 h-screen">
-            <ScrollView >
+            <ScrollView showsVerticalScrollIndicator={false}>
                 {
                     individual.filter(handleFilter).map(room => (
                         <Pressable onPress={() => handleNevigate(room)} key={room.roomname} className="flex-row justify-start rounded-[12px] bg-[#e6eff6] py-2  px-2 items-center mb-2" style={{ rowGap: 20 }}>
@@ -53,7 +53,5 @@ const SearchContent = ({ data }) => {
 };
 
 export default SearchContent;
-
-const styles = StyleSheet.create({});
 
 

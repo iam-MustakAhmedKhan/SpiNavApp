@@ -5,8 +5,16 @@ export const boxIcon = {
     Office: require('../asset/icon/officeicon.png'),
     Washroom: require('../asset/icon/washroomicon.png'),
     Others: require('../asset/icon/othersicon.png'),
+    Map: require('../asset/icon/map.png'),
+    UserManual: require('../asset/icon/usemanual.png'),
+    Dev: require('../asset/icon/dev.png'),
+    Shah: require('../asset/img/shah.png'),
+    Mustak: require('../asset/img/mustak.png'),
+    Muhib: require('../asset/img/muhibb.png')
 
 };
+
+
 
 export const mapsPics = {
     1006: require("../asset/maps/1006.png"),

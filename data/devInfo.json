@@ -3,26 +3,26 @@
         "name": "Shah Alom",
         "class": "CMT-A2 (2020-2021)",
         "contribution": "Contribution in Design",
-        "pic": "/assets/img/shah.png",
+        "pic": "Shah",
         "social": [
             {
                 "name": "Facebook",
-                "component": "BsFacebook",
+                "component": "facebook",
                 "link": "https://www.facebook.com/shahalom.iau"
             },
             {
                 "name": "Instagram",
-                "component": "BsInstagram",
+                "component": "instagram",
                 "link": "https://www.instagram.com/shahalom.iau"
             },
             {
                 "name": "Github",
-                "component": "BsGithub",
+                "component": "github",
                 "link": "https://github.com/dev-shahalom"
             },
             {
                 "name": "Linkedin",
-                "component": "BsLinkedin",
+                "component": "linkedin",
                 "link": "https://www.linkedin.com/in/shahalom-iau/"
             }
         ]
@@ -31,26 +31,26 @@
         "name": "Muhibbur Rahman",
         "class": "CMT-A2 (2020-2021)",
         "contribution": "Contribution in Data & Code",
-        "pic": "/assets/img/muhibb.png",
+        "pic": "Muhib",
         "social": [
             {
                 "name": "Facebook",
-                "component": "BsFacebook",
+                "component": "facebook",
                 "link": "https://www.facebook.com/m.muhib.68442"
             },
             {
                 "name": "Instagram",
-                "component": "BsInstagram",
+                "component": "instagram",
                 "link": "https://www.instagram.com/muhib2929"
             },
             {
                 "name": "Github",
-                "component": "BsGithub",
+                "component": "github",
                 "link": "https://github.com/muhib68442"
             },
             {
                 "name": "Linkedin",
-                "component": "BsLinkedin",
+                "component": "linkedin",
                 "link": ""
             }
         ]
@@ -59,26 +59,26 @@
         "name": "Mustak Ahmed Khan",
         "class": "Outsider",
         "contribution": "Contribution in Code",
-        "pic": "/assets/img/mustak.png",
+        "pic": "Mustak",
         "social": [
             {
                 "name": "Facebook",
-                "component": "BsFacebook",
+                "component": "facebook",
                 "link": "https://www.facebook.com/iam.MustakAhmedKhan/"
             },
             {
                 "name": "Instagram",
-                "component": "BsInstagram",
+                "component": "instagram",
                 "link": "https://www.instagram.com/iam.mustakahmedkhan/?hl=en"
             },
             {
                 "name": "Github",
-                "component": "BsGithub",
+                "component": "github",
                 "link": "https: //github.com/iam-MustakAhmedKhan"
             },
             {
                 "name": "Linkedin",
-                "component": "BsLinkedin",
+                "component": "linkedin",
                 "link": "https://www.linkedin.com/in/iam-mustakahmedkhan/"
             }
         ]

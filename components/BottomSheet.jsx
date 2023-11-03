@@ -26,7 +26,11 @@ const BottomSheets = () => {
             dispatch(getSearchValue(''));
         }
 
+        // console.log(index);
+        // console.log('hello');
+
     }, []);
+
     const handleSnapPress = useCallback((index) => {
         sheetRef.current?.snapToIndex(index);
     }, []);
@@ -61,6 +65,11 @@ const BottomSheets = () => {
                     }}
                     handleIndicatorStyle={{ backgroundColor: '#bfcad2', width: 50, height: 5 }}
                     onChange={handleSheetChange}
+                // onAnimate={(fromIndex, toIndex) => {
+                //     handleSheetChange(toIndex);
+                //     console.log(fromIndex);
+                // }}
+                // onAnimate={(fromIndex, toIndex) => console.log(toIndex)}
                 >
 
                     <View style={{ paddingHorizontal: 20 }}>
@@ -88,7 +97,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         width: '100%',
-
         flex: 1,
     },
 });

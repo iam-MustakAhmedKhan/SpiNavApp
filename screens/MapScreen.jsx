@@ -7,9 +7,9 @@ import { Feather } from '@expo/vector-icons';
 import { mapsPics } from '../utils/images';
 
 
-import ZoomableImage from '../components/ZoomableImage';
 import { useSelector } from 'react-redux';
 import SearchContent from '../components/SearchContent';
+import Zoom from 'react-native-zoom-reanimated';
 
 
 const MapScreen = () => {
@@ -25,13 +25,12 @@ const MapScreen = () => {
             <SearchInput inedex={1} />
 
             {searchValue == '' ? <>
-                <View className="border h-2/3 mt-4 rounded-[12px] border-[#0076BE] overflow-hidden items-center justify-center">
-
+                <Zoom className="border h-2/3 mt-4 rounded-[12px] border-[#0076BE] overflow-hidden items-center justify-center">
                     <View>
-                        {mapsPics[solidMapName] ? <ZoomableImage imageUri={mapsPics[solidMapName]} /> : <Text>No Map Found!</Text>}
+                        {mapsPics[solidMapName] ? <Image source={mapsPics[solidMapName]} /> : <Text>No Map Found!</Text>}
                     </View>
 
-                </View>
+                </Zoom>
 
                 <View className="mt-8 flex-row items-center">
                     <Text className="font-bold">{building}</Text>

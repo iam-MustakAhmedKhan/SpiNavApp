@@ -5,41 +5,34 @@ import { BackHandler } from 'react-native';
 import { useEffect } from 'react';
 import { Alert } from 'react-native';
 // import Bsheet from '../components/Bsheet';
+import { Ionicons } from '@expo/vector-icons';
+import { Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { useSelector } from 'react-redux';
 
 const HomeScreen = () => {
+    const navigation = useNavigation();
+    const inde = useSelector(state => state.action.sheetIndex);
 
-    useEffect(() => {
-        const backAction = () => {
-            Alert.alert('Hold on!', 'Are you sure you want to go back?', [
-                {
-                    text: 'Cancel',
-                    onPress: () => null,
-                    style: 'cancel',
-                },
-                { text: 'YES', onPress: () => BackHandler.exitApp() },
-            ]);
-            return true;
-        };
-
-        const backHandler = BackHandler.addEventListener(
-            'hardwareBackPress',
-            backAction,
-        );
-
-        return () => backHandler.remove();
-    }, []);
 
     return (
-        <ImageBackground style={{ flex: 1 }} source={require('../asset/img/bg.png')} resizeMode='cover' blurRadius={8}>
+        <>
+            {inde === 0 && <Pressable onPress={() => navigation.openDrawer()} className="absolute right-0 px-4 py-2 z-10">
+                <Ionicons name="menu" size={40} color="black" />
+            </Pressable>}
 
-            <View style={styles.heroLogoText}>
-                <Image source={require('../asset/img/logo.png')} />
-                <Text style={styles.heroText} >Where is your destination?</Text>
-            </View>
+            <ImageBackground style={{ flex: 1 }} source={require('../asset/img/bg.png')} resizeMode='cover' blurRadius={8}>
 
-            <BottomSheet />
-            {/* <Bsheet/> */}
-        </ImageBackground>
+                <View style={styles.heroLogoText}>
+                    <Image source={require('../asset/img/logo.png')} />
+                    <Text style={styles.heroText} >Where is your destination?</Text>
+                </View>
+
+
+                <BottomSheet />
+                {/* <Bsheet/> */}
+            </ImageBackground>
+        </>
     );
 };
 

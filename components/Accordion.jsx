@@ -52,18 +52,22 @@ const Accordion = ({ data }) => {
                                     </Pressable>}
                                 </CollapseHeader>
                                 <CollapseBody >
-                                    {
-                                        room.roomNo?.map(rm => (
-                                            <View key={rm.id} className="py-1 bg-[#edf6fd]" style={styles.contentContainer}>
-                                                <Pressable onPress={() => handleNavigate(rm)} className="flex-row items-center bg-[#edf6fd] p-2 rounded-[12px]">
-                                                    <View className="w-[60px] h-[60px] rounded-full  bg-[#e6eff6] p-3 mr-3 object-cover">
-                                                        <Image source={boxIcon[data.title]} className="w-full h-full" />
-                                                    </View>
-                                                    <Text className="text-left font-bold text-[16px]">{rm.roomname}</Text>
-                                                </Pressable>
-                                            </View>
-                                        ))
-                                    }
+                                    <View className="bg-[#e6eff6] p-3 rounded-[12px] pb-1">
+
+                                        <View style={styles.contentContainer}>
+                                            {
+                                                room.roomNo?.map(rm => (
+                                                    <Pressable key={rm.id} onPress={() => handleNavigate(rm)} className="flex-row items-center p-2 mb-2  bg-[#edf6fd] rounded-md">
+                                                        <View className="w-[60px] h-[60px] rounded-full  bg-[#e6eff6] p-3 mr-3 object-cover">
+                                                            <Image source={boxIcon[data.title]} className="w-full h-full" />
+                                                        </View>
+                                                        <Text className="text-left font-bold text-[16px]">{rm.roomname}</Text>
+                                                    </Pressable>
+                                                ))
+                                            }
+                                        </View>
+
+                                    </View>
                                 </CollapseBody>
 
                             </Collapse>
