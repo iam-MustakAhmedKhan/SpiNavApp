@@ -30,10 +30,13 @@ const Sidebar = ({ data }) => {
 
             >
 
-                <Pressable className="items-end justify-start pr-3" onPress={() => data.navigation.closeDrawer()}>
-                    <Entypo name="cross" size={40} color="black" />
-                </Pressable>
+                <View className="flex-row justify-between items-center px-4">
+                    <Image source={boxIcon.namedLogo} />
+                    <Pressable onPress={() => data.navigation.closeDrawer()}>
+                        <Entypo name="cross" size={40} color="black" />
+                    </Pressable>
 
+                </View>
                 <View className="px-4 mt-5">
                     <View className="mb-2">
                         <Collapse>

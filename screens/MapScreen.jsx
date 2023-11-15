@@ -9,7 +9,9 @@ import { mapsPics } from '../utils/images';
 
 import { useSelector } from 'react-redux';
 import SearchContent from '../components/SearchContent';
-import Zoom from 'react-native-zoom-reanimated';
+// import Zoom from 'react-native-zoom-reanimated';
+import { ReactNativeZoomableView } from '@openspacelabs/react-native-zoomable-view';
+
 
 
 const MapScreen = () => {
@@ -24,13 +26,25 @@ const MapScreen = () => {
         <View className="bg-[#edf6fd] h-screen py-5" style={{ paddingHorizontal: 20 }} >
             <SearchInput inedex={1} />
 
+            
             {searchValue == '' ? <>
-                <Zoom className="border h-2/3 mt-4 rounded-[12px] border-[#0076BE] overflow-hidden items-center justify-center">
-                    <View>
+                <View className="border h-2/3 w-full mt-4 rounded-[12px] border-[#0076BE] overflow-hidden items-center justify-center">
+                    <ReactNativeZoomableView
+                        maxZoom={5}
+                        minZoom={0.5}
+                        zoomStep={0.5}
+                        initialZoom={1}
+                        bindToBorders={true}
+                        // onZoomAfter={this.logOutZoomState}
+                        style={{
+                            padding:100,
+                 }} >
+                   
                         {mapsPics[solidMapName] ? <Image source={mapsPics[solidMapName]} /> : <Text>No Map Found!</Text>}
-                    </View>
+                  
 
-                </Zoom>
+                </ReactNativeZoomableView>
+                </View>
 
                 <View className="mt-8 flex-row items-center">
                     <Text className="font-bold">{building}</Text>

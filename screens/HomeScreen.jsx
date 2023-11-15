@@ -21,10 +21,10 @@ const HomeScreen = () => {
                 <Ionicons name="menu" size={40} color="black" />
             </Pressable>}
 
-            <ImageBackground style={{ flex: 1 }} source={require('../asset/img/bg.png')} resizeMode='cover' blurRadius={8}>
+            <ImageBackground style={{ flex: 1 }} source={require('../assets/img/bg.png')} resizeMode='cover' blurRadius={8} className="z-[-1]">
 
                 <View style={styles.heroLogoText}>
-                    <Image source={require('../asset/img/logo.png')} />
+                    <Image source={require('../assets/img/logo.png')} />
                     <Text style={styles.heroText} >Where is your destination?</Text>
                 </View>
 

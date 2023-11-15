@@ -1,23 +1,29 @@
 {
   "expo": {
-    "name": "SpiNavApp",
-    "slug": "SpiNavApp",
+    "name": "Spi Nav",
+    "slug": "spinav",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
     ],
+    "icon": "./assets/icon/icon.png",
     "splash": {
-      "image": "./asset/splash.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#4099cf"
     },
     "extra": {
       "eas": {
-        "projectId": "202a5037-fecb-4326-86ab-1af894053ff2"
+        "projectId": "46e3cfca-a0e1-47be-bef5-fc1ddbc7cde6"
       }
     },
     "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
       "package": "com.mustak10.SpiNavApp"
-    }
+    },
+    "owner": "mustak10"
   }
 }

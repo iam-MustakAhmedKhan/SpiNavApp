@@ -9,6 +9,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import Dev from './screens/Dev';
 import Stacknav from './screens/Stacknav';
 import Sidebar from './components/Sidebar';
+import { StatusBar } from 'react-native';
+
 
 const Drawer = createDrawerNavigator();
 
@@ -46,6 +48,7 @@ export default function App() {
         <Provider store={store}>
 
           <SafeAreaView style={{ flex: 1 }}>
+
             <NavigationContainer>
 
               <Drawer.Navigator
@@ -68,6 +71,8 @@ export default function App() {
         </Provider>
 
       </GestureHandlerRootView>
+      <StatusBar backgroundColor={'#4099cf'} />
+
     </>
   );
 }

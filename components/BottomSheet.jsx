@@ -17,7 +17,7 @@ const BottomSheets = () => {
     const isfocued = useSelector(state => state.action.isfocued);
     const searchValue = useSelector(state => state.action.searchValue);
     // variables
-    const snapPoints = useMemo(() => ["50%", "100%"], []);
+    const snapPoints = useMemo(() => ["50%", "100%"]);
     const dispatch = useDispatch();
 
     const handleSheetChange = useCallback((index) => {
@@ -55,21 +55,14 @@ const BottomSheets = () => {
 
 
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-            <View style={styles.bottomSheetWrap}>
+            <View style={styles.bottomSheetWrap} >
                 <BottomSheet ref={sheetRef}
                     snapPoints={snapPoints}
                     backgroundStyle={{
                         backgroundColor: '#edf6fd',
-
-
                     }}
                     handleIndicatorStyle={{ backgroundColor: '#bfcad2', width: 50, height: 5 }}
                     onChange={handleSheetChange}
-                // onAnimate={(fromIndex, toIndex) => {
-                //     handleSheetChange(toIndex);
-                //     console.log(fromIndex);
-                // }}
-                // onAnimate={(fromIndex, toIndex) => console.log(toIndex)}
                 >
 
                     <View style={{ paddingHorizontal: 20 }}>
@@ -98,5 +91,6 @@ const styles = StyleSheet.create({
         bottom: 0,
         width: '100%',
         flex: 1,
+        zIndex: 999
     },
 });
