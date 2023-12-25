@@ -581,7 +581,7 @@
                     {
                         "id": 2,
                         "roomname": "Civil Technology Room",
-                        "map": "../assets/maps/civilTeacherRoom.png",
+                        "map": "../assets/maps/civilteacherRoom.png",
                         "floor": "2nd",
                         "building": "Administrative"
                     },

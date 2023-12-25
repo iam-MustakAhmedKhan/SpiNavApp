@@ -1,4 +1,4 @@
-import { View, TextInput, ScrollView, Keyboard, Pressable } from "react-native";
+import { View, TextInput, Pressable } from "react-native";
 import React, { forwardRef, useEffect, useState } from "react";
 import { AntDesign } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";

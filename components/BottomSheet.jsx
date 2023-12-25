@@ -1,9 +1,6 @@
 import {
-    Dimensions,
     Keyboard,
-    ScrollView,
     StyleSheet,
-    Text,
     TouchableWithoutFeedback,
     View,
 } from "react-native";
@@ -12,7 +9,6 @@ import SearchInput from "./SearchInput";
 import NavigationBox from "./NavigationBox";
 import BottomSheet, {
     BottomSheetScrollView,
-    BottomSheetView,
 } from "@gorhom/bottom-sheet";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -59,7 +55,7 @@ const BottomSheets = () => {
     });
 
     return (
-        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+        <TouchableWithoutFeedback className="z-50" onPress={() => Keyboard.dismiss()}>
             <View style={styles.bottomSheetWrap}>
                 <BottomSheet
                     ref={sheetRef}
@@ -74,6 +70,7 @@ const BottomSheets = () => {
                     }}
                     scrollable={true}
                     onChange={handleSheetChange}
+                    
                 >
                     <View style={{ paddingHorizontal: 20, paddingBottom: 20 }}>
                         <SearchInput ref={intRef} inedex={inde} />

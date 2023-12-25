@@ -73,6 +73,7 @@ export const mapsPics = {
     "computertechnology(cst)": require("../assets/maps/computertechnology(cst).png"),
     "civiltechnology(ct)": require("../assets/maps/civiltechnology(ct).png"),
     "civiltechnology(ct)(2ndshift)": require("../assets/maps/civiltechnology(ct)(2ndshift).png"),
+    "civiltechnologyroom": require("../assets/maps/civiltechnologyroom.png"),
     "electromedicaltechnology(emt)": require("../assets/maps/electromedicaltechnology(emt).png"),
     "electronicstechnology(ent)": require("../assets/maps/electronicstechnology(ent).png"),
     "electricaltechnology(et)": require("../assets/maps/electricaltechnology(et).png"),

@@ -1,12 +1,10 @@
-import { View, Text, FlatList } from "react-native";
+import { View} from "react-native";
 import React from "react";
 import NavigationCard from "./NavigationCard";
 import datas from "../data/data.json";
 import { boxIcon } from "../utils/images";
-import { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 
 const NavigationBox = () => {
-    // flex-row flex-wrap
     return (
         <View style={{ gap: 20,flexDirection:'row',width:'100%',flexWrap:'wrap' }}>
             {datas.map((data) => (

@@ -1,11 +1,9 @@
 import {
     DrawerContentScrollView,
-    DrawerItemList,
 } from "@react-navigation/drawer";
 import React from "react";
 import { Pressable, Text } from "react-native";
 import { View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import { Entypo } from "@expo/vector-icons";
 import {
     Collapse,
@@ -29,7 +27,7 @@ const Sidebar = ({ data }) => {
     };
 
     return (
-        <View style={{ flex: 1, backgroundColor: "#0076be" }}>
+        <View style={{ flex: 1, backgroundColor: "#0076be",paddingTop:16 }}>
             <DrawerContentScrollView {...data}>
                 <View className="flex-row justify-between items-center px-4">
                     <Image source={boxIcon.namedLogo} />

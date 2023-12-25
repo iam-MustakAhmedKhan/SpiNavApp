@@ -54,33 +54,5 @@
                 "link": "https://www.linkedin.com/in/md-muhibbur-rahman-9624642a1?trk=contact-info"
             }
         ]
-    },
-    {
-        "name": "Mustak Ahmed Khan",
-        "class": "BSC in CSE",
-        "contribution": "Contribution in Code",
-        "pic": "Mustak",
-        "social": [
-            {
-                "name": "Facebook",
-                "component": "facebook",
-                "link": "https://www.facebook.com/iam.MustakAhmedKhan/"
-            },
-            {
-                "name": "Instagram",
-                "component": "instagram",
-                "link": "https://www.instagram.com/iam.mustakahmedkhan/?hl=en"
-            },
-            {
-                "name": "Github",
-                "component": "github",
-                "link": "https: //github.com/iam-MustakAhmedKhan"
-            },
-            {
-                "name": "Linkedin",
-                "component": "linkedin",
-                "link": "https://www.linkedin.com/in/iam-mustakahmedkhan/"
-            }
-        ]
     }
 ]

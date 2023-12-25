@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import React from "react";
 import { Pressable } from "react-native";
 import { ScrollView } from "react-native";
@@ -7,8 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useDispatch, useSelector } from "react-redux";
 import individual from "../data/individual.json";
 import { getSearchValue } from "../redux/actionSlice";
-import { BottomSheetScrollView } from "@gorhom/bottom-sheet";
-// boxIcon[data.title];
+
 const SearchContent = ({ data }) => {
     const searchValue = useSelector((state) => state.action.searchValue);
     const navigation = useNavigation();

@@ -10,7 +10,7 @@ import {
 import { ScrollView } from "react-native";
 import { boxIcon } from "../utils/images";
 import { useNavigation } from "@react-navigation/native";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getSearchValue } from "../redux/actionSlice";
 
 const Accordion = ({ data }) => {
@@ -30,7 +30,7 @@ const Accordion = ({ data }) => {
         <View className=" mt-3  pb-12">
             <ScrollView showsVerticalScrollIndicator={false}>
                 {data.roomsdropdown.map((room) => (
-                    <View key={room.id} className="py-2  px-2">
+                    <View key={room.id} className="py-2  px-0">
                         <Collapse>
                             <CollapseHeader>
                                 {room.title ? (
@@ -99,7 +99,7 @@ const Accordion = ({ data }) => {
                                                     />
                                                 </View>
                                                 <Text
-                                                    className="text-left font-bold text-[16px]"
+                                                    className="text-left font-bold text-[16px] w-[calc(100%-35%)]"
                                                     numberOfLines={1}
                                                     ellipsizeMode="tail"
                                                 >

@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 const Stacknav = () => {
     useEffect(() => {
         const backAction = () => {
-            Alert.alert("Hold on!", "Are you sure you want to go back?", [
+            Alert.alert("Hold on!", "Are you sure you want to Exit? otherwise swipe down", [
                 {
                     text: "Cancel",
                     onPress: () => null,
