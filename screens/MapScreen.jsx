@@ -29,9 +29,9 @@ const MapScreen = () => {
                     <View className="border h-2/3 w-full mt-4 rounded-[12px] border-[#0076BE] overflow-hidden items-center justify-center">
                         <ReactNativeZoomableView
                             maxZoom={5}
-                            minZoom={0.5}
+                            minZoom={0.1}
                             zoomStep={0.5}
-                            initialZoom={1}
+                            initialZoom={0.3}
                             bindToBorders={true}
                             style={{
                                 padding: 100,
