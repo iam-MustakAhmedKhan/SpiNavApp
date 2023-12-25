@@ -47,9 +47,9 @@ const MapScreen = () => {
 
                         <Text className="font-bold break-all">
                             {building}
-                            {' >> '}
+                            {' Building >> '}
                             {floor}
-                            {" >> "}
+                            {" Floor >> "}
                             {mapName}
                         </Text>
                     </View>

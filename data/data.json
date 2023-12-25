@@ -437,7 +437,7 @@
                         "id": 3,
                         "roomname": "Civil Technology (CT) (2nd Shift)",
                         "map": "../assets/maps/civilDept2.png",
-                        "floor": "2nd",
+                        "floor": "1st",
                         "building": "Administrative"
                     },
                     {
