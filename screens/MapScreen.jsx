@@ -6,6 +6,7 @@ import { Image } from "react-native";
 import { mapsPics } from "../utils/images";
 import { useSelector } from "react-redux";
 import SearchContent from "../components/SearchContent";
+
 import { ReactNativeZoomableView } from "@openspacelabs/react-native-zoomable-view";
 
 const MapScreen = () => {
@@ -43,12 +44,13 @@ const MapScreen = () => {
                     </View>
 
                     <View className="mt-8 flex-row items-center break-words">
+
                         <Text className="font-bold break-all">
                             {building}
                             {' >> '}
-                            {mapName}
-                            {" >> "}
                             {floor}
+                            {" >> "}
+                            {mapName}
                         </Text>
                     </View>
                 </>
