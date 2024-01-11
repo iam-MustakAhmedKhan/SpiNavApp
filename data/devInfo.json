@@ -2,7 +2,7 @@
     {
         "name": "Shah Alom",
         "class": "CMT-A2 (2020-2021)",
-        "contribution": "Contribution in Design & Data",
+        "contribution": "Contribution in Design",
         "pic": "Shah",
         "social": [
             {
@@ -30,7 +30,7 @@
     {
         "name": "Md. Muhibbur Rahman",
         "class": "CMT-A2 (2020-2021)",
-        "contribution": "Contribution in Data & Code",
+        "contribution": "Contribution in Data",
         "pic": "Muhib",
         "social": [
             {
@@ -52,6 +52,34 @@
                 "name": "Linkedin",
                 "component": "linkedin",
                 "link": "https://www.linkedin.com/in/md-muhibbur-rahman-9624642a1?trk=contact-info"
+            }
+        ]
+    },
+    {
+        "name": "Mustak Ahmed Khan",
+        "class": "BSC in CSE",
+        "contribution": "Contribution in Code",
+        "pic": "Mustak",
+        "social": [
+            {
+                "name": "Facebook",
+                "component": "facebook",
+                "link": "https://www.facebook.com/iam.MustakAhmedKhan/"
+            },
+            {
+                "name": "Instagram",
+                "component": "instagram",
+                "link": "https://www.instagram.com/iam.mustakahmedkhan"
+            },
+            {
+                "name": "Github",
+                "component": "github",
+                "link": "https://github.com/iam-MustakAhmedKhan"
+            },
+            {
+                "name": "Linkedin",
+                "component": "linkedin",
+                "link": "https://www.linkedin.com/in/iam-mustakahmedkhan/"
             }
         ]
     }
