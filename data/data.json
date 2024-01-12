@@ -279,7 +279,7 @@
             },
             {
                 "id": 11,
-                "roomname": "Micro Lab",
+                "roomname": "Micro Lab (u Lab)",
                 "map": "../assets/maps/microLab.png",
                 "floor": "2nd",
                 "building": "Administrative"
@@ -293,7 +293,7 @@
             },
             {
                 "id": 13,
-                "roomname": "Network Lab",
+                "roomname": "Network Lab (NWL)",
                 "map": "../assets/maps/networkLab.png",
                 "floor": "1st",
                 "building": "Computer"
@@ -307,7 +307,7 @@
             },
             {
                 "id": 16,
-                "roomname": "Software Lab",
+                "roomname": "Software Lab (SWL)",
                 "map": "../assets/maps/softwareLab.png",
                 "floor": "2nd",
                 "building": "Computer"
@@ -320,7 +320,7 @@
         "roomsdropdown": [
             {
                 "id": 1,
-                "roomname": "Auto Diesel Shop",
+                "roomname": "Auto Diesel Shop (ADS)",
                 "map": "../assets/maps/autoDieselShop.png",
                 "floor": "1st",
                 "building": "Administrative"
@@ -341,7 +341,7 @@
             },
             {
                 "id": 4,
-                "roomname": "Heat Treatment Lab",
+                "roomname": "Heat Treatment Lab (HTL)",
                 "map": "../assets/maps/heatTreatmentLab.png",
                 "floor": "1st",
                 "building": "Administrative"

@@ -1,19 +1,14 @@
-import {
-    DrawerContentScrollView,
-} from "@react-navigation/drawer";
-import React from "react";
-import { Pressable, Text } from "react-native";
-import { View } from "react-native";
 import { Entypo } from "@expo/vector-icons";
+import { DrawerContentScrollView } from "@react-navigation/drawer";
 import {
     Collapse,
     CollapseBody,
     CollapseHeader,
 } from "accordion-collapse-react-native";
-import { boxIcon } from "../utils/images";
-import { Image } from "react-native";
-import { Linking } from "react-native";
+import React from "react";
+import { Image, Linking, Pressable, Text, View } from "react-native";
 import devInfo from "../data/devInfo.json";
+import { boxIcon } from "../utils/images";
 
 const Sidebar = ({ data }) => {
     const openLink = (link) => {
@@ -27,7 +22,7 @@ const Sidebar = ({ data }) => {
     };
 
     return (
-        <View style={{ flex: 1, backgroundColor: "#0076be",paddingTop:16 }}>
+        <View style={{ flex: 1, backgroundColor: "#0076be", paddingTop: 16 }}>
             <DrawerContentScrollView {...data}>
                 <View className="flex-row justify-between items-center px-4">
                     <Image source={boxIcon.namedLogo} />
@@ -60,9 +55,7 @@ const Sidebar = ({ data }) => {
                             </CollapseHeader>
                             <CollapseBody>
                                 <View className="bg-[#e6eff6] p-5 rounded-md">
-                                    <Text>
-                                        Comming Soon!
-                                    </Text>
+                                    <Text>Comming Soon!</Text>
                                 </View>
                             </CollapseBody>
                         </Collapse>
@@ -91,9 +84,7 @@ const Sidebar = ({ data }) => {
                             </CollapseHeader>
                             <CollapseBody>
                                 <View className="bg-[#e6eff6] p-5 rounded-md">
-                                    <Text>
-                                        Comming Soon!
-                                    </Text>
+                                    <Text>Comming Soon!</Text>
                                 </View>
                             </CollapseBody>
                         </Collapse>
@@ -156,6 +147,21 @@ const Sidebar = ({ data }) => {
                                 ))}
                             </CollapseBody>
                         </Collapse>
+                    </View>
+
+                    <View className="mt-10">
+                        <Text className="text-center text-2xl font-medium text-white/50">
+                            Supervised by
+                        </Text>
+                        <Text className="text-center text-xl font-medium">
+                            Poritosh Modak
+                        </Text>
+                        <Text className="text-center">
+                            Head of the Department
+                        </Text>
+                        <Text className="text-center">
+                            Computer Science and Technology (SPI)
+                        </Text>
                     </View>
                 </View>
             </DrawerContentScrollView>
